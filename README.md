@@ -45,14 +45,14 @@ python CausCrypto.py
 The script prints a quick report to the console:
 
 ```
-Latest Unix time entry = 1700832000
+Latest Unix time entry = 1597104000000
 Correlation Matrix of Cryptocoins
-Estimated ATE for Return: 0.0032 (+/- 0.0011)
-Estimated ATE for Trend: 0.0115 (+/- 0.0032)
+Estimated ATE for Return: -4.3162 (+/- 20.9837)
+Estimated ATE for Trend: 0.5410 (+/- 4.5521)
 Sample Propensity Scores:
    Treatment  Propensity Score
-0          1            0.4724
-1          1            0.4893
+0          1            0.689294
+1          1            0.545454
 ...
 ```
 
@@ -64,6 +64,7 @@ Sample Propensity Scores:
 * *Normalization* | Scales each coin's `Close`by its maximum value (result `_s`series).
 * *ADF* | For each coin, prints the ADF test statistics to gauge stationarity.
 * *Visualizations* | Sub-stacked daily closing trend of all nine coins, Heat map of Pearson correlations, and a hand-craft causal graph (BTC → SOL, BTC → TRX, ...)
+
 ![plot]Trends.png
 
 ![plot]CorrMatrix.png
@@ -71,6 +72,7 @@ Sample Propensity Scores:
 ![plot]ACG.png
 
 * *Bayesian Network* | Uses `pomegranate` to specify acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
+
 ![plot]ACG_final.png
 
 * *Momentum strategy* | Generate a binary "treatment" if Solana's trend matches Bitcoin's trend over a 30-day SMA.
@@ -133,10 +135,7 @@ python CausCrypto.py
 ├── ACG.png **Graphic for the Causal Graph**<br/>
 ├── ACG_final.png **Graphic for the final DAG**<br/>
 ├── Histogram.png **Graphic for Balance**<br/>
-├── data/
-│   ├── Binance_ADAUSDT_d.csv
-│   ├── Binance_BCHUSDT_d.csv
-│   └── ... (other 7 files)
+├── Binance_...USDT_d.csv **Data CSV Files**<br/>
 ├── requirements.txt **Python dependencies**<br/>
 ├── README.md **This file**<br/>
 └── LICENSE **Unlicense**
