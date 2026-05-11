@@ -107,7 +107,7 @@ In the current setting the result is roughly 80 % for BNB, TRX, SOL and XRP, w
  
 ### Clone the repo:
 ```
-git clone https://github.com/mschindler779/CausCrypto.git
+git clone https://github.com/markus-schindler/CausCrypto.git
 cd CausCrypto
 ```
 
